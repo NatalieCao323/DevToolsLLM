@@ -62,21 +62,33 @@ const toolCalls = [
 console.log('\n检测异常：\n');
 let anomalyCount = 0;
 toolCalls.forEach((call, i) => {
-  const anomalies = detector.detectAnomalies(call, toolCalls.slice(0, i));
-  if (anomalies && anomalies.length > 0) {
+  // 先添加到历史
+  if (i > 0) {
+    detector.addCall(toolCalls[i - 1]);
+  }
+  
+  // 检测当前调用是否异常
+  const result = detector.detectAnomaly({
+    tool: call.name,
+    duration: call.duration,
+    status: call.success ? 'success' : 'error',
+    timestamp: call.timestamp,
+    input: {}
+  });
+  
+  if (result.isAnomaly) {
     anomalyCount++;
     console.log(`❌ 调用 ${i + 1}: ${call.name} (${call.duration}ms)`);
-    anomalies.forEach(a => {
-      console.log(`   异常类型: ${a.type}`);
-      console.log(`   严重程度: ${a.severity}`);
-      console.log(`   详情: ${a.message || a.details}`);
-    });
+    console.log(`   异常评分: ${result.score.toFixed(2)}`);
+    console.log(`   原因: ${result.reason}`);
     console.log('');
   }
 });
 
 if (anomalyCount === 0) {
-  console.log('✅ 未检测到明显异常（正常情况）\n');
+  console.log('✅ 未检测到明显异常（需要更多历史数据）\n');
+} else {
+  console.log(`检测到 ${anomalyCount} 个异常调用\n`);
 }
 
 // 3. 测试 SuggestionGenerator
@@ -105,18 +117,17 @@ const testScenarios = [
 
 console.log('\n生成调试建议：\n');
 testScenarios.forEach((scenario, i) => {
-  const suggestions = suggestionGen.generateSuggestions(
-    scenario.error,
-    scenario.toolCall,
-    []
-  );
+  const suggestions = suggestionGen.generateSuggestions({
+    type: scenario.error.code,
+    message: scenario.error.message
+  });
   
   console.log(`场景 ${i + 1}: ${scenario.error.message}`);
   if (suggestions && suggestions.length > 0) {
     suggestions.slice(0, 2).forEach((s, j) => {
-      console.log(`  ${j + 1}. ${s.suggestion || s.title}`);
-      console.log(`     优先级: ${s.priority || 'medium'}`);
+      console.log(`  ${j + 1}. ${s.solution || s.suggestion}`);
       console.log(`     置信度: ${((s.confidence || 0) * 100).toFixed(0)}%`);
+      console.log(`     上下文: ${s.context || 'general'}`);
     });
   } else {
     console.log(`  暂无具体建议`);
@@ -145,25 +156,26 @@ const complexToolCall = {
 };
 
 console.log('\n执行 ML 增强分析...\n');
-const analysis = mlInspector.analyze(complexError, complexToolCall);
+const analysis = mlInspector.analyzeError(complexError.message);
 
 console.log('分析结果：');
 console.log(`  错误类型: ${analysis.classification?.type || 'UNKNOWN'}`);
 console.log(`  置信度: ${((analysis.classification?.confidence || 0) * 100).toFixed(0)}%`);
-console.log(`  严重程度: ${analysis.severity || 'MEDIUM'}`);
 
-if (analysis.anomalies && analysis.anomalies.length > 0) {
-  console.log(`\n  检测到 ${analysis.anomalies.length} 个异常：`);
-  analysis.anomalies.forEach(a => {
-    console.log(`    - ${a.type}: ${a.details}`);
-  });
+if (analysis.classification?.subtype) {
+  console.log(`  子类型: ${analysis.classification.subtype}`);
 }
 
 if (analysis.suggestions && analysis.suggestions.length > 0) {
   console.log(`\n  修复建议 (${analysis.suggestions.length} 条)：`);
   analysis.suggestions.slice(0, 3).forEach((s, i) => {
-    console.log(`    ${i + 1}. ${s.title || s.suggestion}`);
+    console.log(`    ${i + 1}. ${s.solution || s.suggestion}`);
+    console.log(`       置信度: ${((s.confidence || 0) * 100).toFixed(0)}%`);
   });
+}
+
+if (analysis.explanation) {
+  console.log(`\n  解释: ${analysis.explanation}`);
 }
 
 // 5. 测试 CostOptimizer
