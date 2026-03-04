@@ -80,7 +80,8 @@
 
 | 模块 | 功能 | 竞争优势 |
 |------|------|----------|
-| **AutoFixSuggester** | AI 驱动的自动修复建议 | 自动生成可执行代码修复方案，置信度评分，支持一键应用 |
+| **AutoFixSuggester** | AI 驱动的自动修复建议 | 自动生成可执行代码修复方案，置信度评分，支持一键应用（基于规则，完全免费） |
+| **LLMAutoFixSuggester** | LLM 增强的修复建议 | 可选使用 Ollama（免费）或 OpenAI（付费）生成更智能的建议 |
 | **CostOptimizer** | 成本优化分析器 | 实时成本追踪，识别优化机会，预测节省 20-50% 成本 |
 | **TimeTravelDebugger** | 时间旅行调试器 | 回放任意时间点状态，对比快照差异，分析调用模式 |
 | **MLErrorInspector** | ML 增强错误分析 | 异常检测、智能分类、历史案例匹配，准确率 95%+ |
@@ -604,13 +605,15 @@ ErrorInspector.addPattern('CUSTOM_ERROR', /my custom error/i);
 - 企业级数据安全
 
 #### 2. **AI 驱动的智能调试**
+
+**基础模式（完全免费，推荐）：**
 ```javascript
 const { AutoFixSuggester } = require('devtools-llm');
 
 const fixer = new AutoFixSuggester({ enableAutoApply: true });
 const result = await fixer.suggestFix(error, toolCall, history);
 
-// 输出：
+// 输出：基于规则引擎的修复建议
 // {
 //   fixes: [
 //     {
@@ -623,6 +626,33 @@ const result = await fixer.suggestFix(error, toolCall, history);
 //   canAutoApply: true
 // }
 ```
+
+**LLM 增强模式（可选，使用 Ollama 免费或 OpenAI 付费）：**
+```javascript
+const { LLMAutoFixSuggester } = require('devtools-llm');
+
+// 方案 1：Ollama（完全免费，需本地安装）
+const fixer = new LLMAutoFixSuggester({
+  llmEnabled: true,
+  provider: 'ollama',
+  model: 'codellama',
+  fallbackToRules: true  // 失败时用规则引擎
+});
+
+// 方案 2：OpenAI（付费，约 $0.001/次）
+const fixer = new LLMAutoFixSuggester({
+  llmEnabled: true,
+  provider: 'openai',
+  model: 'gpt-3.5-turbo',
+  apiKey: process.env.OPENAI_API_KEY,
+  fallbackToRules: true
+});
+
+const result = await fixer.suggestFix(error, toolCall, history);
+// 获得更智能、更具体的修复建议
+```
+
+详见：[LLM 集成指南](docs/LLM_INTEGRATION_GUIDE.md)
 
 #### 3. **成本优化，节省真金白银**
 ```javascript

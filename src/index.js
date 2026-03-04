@@ -19,6 +19,7 @@ const SuggestionGenerator = require('./ml/SuggestionGenerator');
 
 // Advanced features
 const AutoFixSuggester = require('./AutoFixSuggester');
+const LLMAutoFixSuggester = require('./LLMAutoFixSuggester');
 const CostOptimizer = require('./CostOptimizer');
 const TimeTravelDebugger = require('./TimeTravelDebugger');
 
@@ -38,6 +39,7 @@ module.exports = {
   
   // Advanced features
   AutoFixSuggester,
+  LLMAutoFixSuggester,
   CostOptimizer,
   TimeTravelDebugger,
   
