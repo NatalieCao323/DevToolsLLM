@@ -1,7 +1,7 @@
-# DevToolsLLM 
+# DevToolsLLM
 
-> **全栈 LLM 应用调试与监控平台**  
-> 让 AI 工具调用透明化、可追踪、可优化
+Debugging and monitoring toolkit for LLM applications.
+Makes AI tool calls transparent, traceable, and optimizable.
 
 [![npm version](https://badge.fury.io/js/devtools-llm.svg)](https://www.npmjs.com/package/devtools-llm)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -9,7 +9,7 @@
 
 ---
 
-##  目录
+## Table of Contents
 
 - [项目简介](#项目简介)
 - [核心目标](#核心目标)
@@ -27,77 +27,77 @@
 
 ---
 
-##  项目简介
+## Overview
 
-**DevToolsLLM** 是一个专为 LLM（大语言模型）应用开发者设计的全栈调试与监控平台。它解决了 AI 应用开发中最痛的问题：**工具调用的黑盒性**。
+DevToolsLLM is a debugging and monitoring platform designed for LLM application developers. It addresses the black-box nature of tool calls in AI applications.
 
-### 为什么需要 DevToolsLLM？
+### Why DevToolsLLM?
 
-在开发 LLM 应用时，你是否遇到过这些问题：
+Common challenges when developing LLM applications:
 
--  **工具调用失败，但不知道为什么？**
--  **参数传递错误，但错误信息不清晰？**
--  **性能瓶颈在哪里？哪个工具最慢？**
--  **调用链复杂，无法追踪完整流程？**
--  **生产环境出错，缺乏实时监控？**
+- Tool calls fail without clear error messages
+- Parameter errors are difficult to diagnose
+- Performance bottlenecks are hard to identify
+- Complex call chains are difficult to trace
+- Production environments lack real-time monitoring
 
-**DevToolsLLM 一站式解决这些问题！**
-
----
-
-##  核心目标
-
-### 1. **透明化** - 让每一次工具调用都清晰可见
-- 完整记录工具调用的输入、输出、耗时
-- 可视化调用链，理解复杂的执行流程
-- 实时监控，掌握应用运行状态
-
-### 2. **可追踪** - 快速定位问题根源
-- 智能错误分析，自动分类错误类型
-- 提供可操作的调试建议
-- 支持历史回溯，重现问题场景
-
-### 3. **可优化** - 数据驱动的性能提升
-- 性能统计，识别瓶颈
-- 成功率追踪，发现不稳定的工具
-- 参数验证，避免低级错误
+DevToolsLLM helps solve these issues.
 
 ---
 
-##  主要功能
+## Core Goals
 
-###  核心模块
+### 1. Transparency
+- Record complete input, output, and timing for each tool call
+- Visualize call chains to understand complex execution flows
+- Real-time monitoring of application state
 
-| 模块 | 功能 | 特点 |
-|------|------|------|
-| **ErrorInspector** | 智能错误分析 | 7+ 种错误类型检测、严重程度分级、调试建议生成 |
-| **ToolCallTracer** | 调用链追踪 | 层级关系构建、性能统计、成功率追踪 |
-| **TraceVisualizer** | 可视化展示 | ASCII 树形图、时间线视图、性能热图 |
-| **RealtimeMonitor** | 实时监控 | WebSocket 推送、Web 仪表盘、实时统计 |
-| **ParameterValidator** | 参数验证 | JSON Schema 验证、类型检查、必填字段检查 |
+### 2. Traceability
+- Intelligent error analysis with automatic classification
+- Actionable debugging suggestions
+- Historical playback to reproduce issues
 
-###  独家高级功能（超越竞品）
+### 3. Optimization
+- Performance statistics to identify bottlenecks
+- Success rate tracking to find unstable tools
+- Parameter validation to prevent errors
 
-| 模块 | 功能 | 竞争优势 |
-|------|------|----------|
-| **AutoFixSuggester** | AI 驱动的自动修复建议 | 自动生成可执行代码修复方案，置信度评分，支持一键应用（基于规则，完全免费） |
-| **LLMAutoFixSuggester** | LLM 增强的修复建议 | 可选使用 Ollama（免费）或 OpenAI（付费）生成更智能的建议 |
-| **CostOptimizer** | 成本优化分析器 | 实时成本追踪，识别优化机会，预测节省 20-50% 成本 |
-| **TimeTravelDebugger** | 时间旅行调试器 | 回放任意时间点状态，对比快照差异，分析调用模式 |
-| **MLErrorInspector** | ML 增强错误分析 | 异常检测、智能分类、历史案例匹配，准确率 95%+ |
+---
 
-###  Web UI 功能
+## Main Features
 
-- ** 实时仪表盘** - 一目了然的统计数据
-- ** 调用链可视化** - 清晰展示工具调用关系
-- ** 错误高亮** - 快速识别失败的调用
-- ** 性能监控** - 实时追踪平均耗时
-- ** 趋势分析** - 成功率、调用量趋势
+### Core Modules
 
-###  框架支持
+| Module | Function | Features |
+|--------|----------|----------|
+| **ErrorInspector** | Error analysis | 7+ error type detection, severity grading, debugging suggestions |
+| **ToolCallTracer** | Call chain tracing | Hierarchy building, performance stats, success rate tracking |
+| **TraceVisualizer** | Visualization | ASCII tree diagrams, timeline views, performance heatmaps |
+| **RealtimeMonitor** | Real-time monitoring | WebSocket push, web dashboard, live statistics |
+| **ParameterValidator** | Parameter validation | JSON Schema validation, type checking, required field validation |
 
--  **LangChain** - 完整集成
--  **Vercel AI SDK** - 中间件支持
+### Advanced Features
+
+| Module | Function | Description |
+|--------|----------|-------------|
+| **AutoFixSuggester** | Automatic fix suggestions | Generates executable code fixes with confidence scores (rule-based, free) |
+| **LLMAutoFixSuggester** | LLM-enhanced suggestions | Optional Ollama (free) or OpenAI (paid) integration for smarter suggestions |
+| **CostOptimizer** | Cost optimization | Real-time cost tracking, identifies optimization opportunities |
+| **TimeTravelDebugger** | Time-travel debugging | Replay any point in time, compare snapshots, analyze patterns |
+| **MLErrorInspector** | ML-enhanced analysis | Anomaly detection, intelligent classification, historical case matching |
+
+### Web UI Features
+
+- Real-time dashboard with clear statistics
+- Call chain visualization
+- Error highlighting for failed calls
+- Performance monitoring with average timing
+- Trend analysis for success rates and call volumes
+
+### Framework Support
+
+- **LangChain** - Full integration
+- **Vercel AI SDK** - Middleware support
 -  **OpenAI SDK** - 拦截器支持（计划中）
 -  **通用 Node.js** - 灵活的 API
 

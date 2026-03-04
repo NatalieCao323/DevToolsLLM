@@ -1,108 +1,107 @@
-# 🎉 DevToolsLLM v0.3.0 正式发布！
+# DevToolsLLM v0.3.0 Release
 
-## 📦 安装
+## Installation
 
 ```bash
 npm install devtools-llm
 ```
 
-**npm 链接：** https://www.npmjs.com/package/devtools-llm
+npm: https://www.npmjs.com/package/devtools-llm
 
 ---
 
-## 🚀 DevToolsLLM 是什么？
+## What is DevToolsLLM?
 
-**第一个具有 AI 自动修复功能的 LLM 调试工具**
+DevToolsLLM is a debugging and monitoring toolkit designed for LLM applications. It provides:
 
-DevToolsLLM 是一个专为 LLM 应用设计的调试和监控工具包，提供：
-- 🤖 AI 驱动的自动修复建议
-- 💰 成本优化分析（节省 20-50%）
-- ⏰ 时间旅行调试
-- 📊 实时 Web UI 监控
-- 🆓 100% 免费，本地运行
+- AI-powered automatic fix suggestions
+- Cost optimization analysis
+- Time-travel debugging capabilities
+- Real-time Web UI monitoring
+- Free and runs locally
 
 ---
 
-## ✨ 核心功能
+## Core Features
 
-### 1. AI 自动修复（业界首创）
+### 1. Automatic Fix Suggestions
 ```javascript
 const { AutoFixSuggester } = require('devtools-llm');
 
 const fixer = new AutoFixSuggester();
 const result = await fixer.suggestFix(error, toolCall, history);
 
-// 获得：
-// - 根因分析
-// - 可执行的代码修复方案
-// - 置信度评分
-// - 一键应用
+// Returns:
+// - Root cause analysis
+// - Executable fix code
+// - Confidence scores
+// - Applicable solutions
 ```
 
-### 2. 成本优化分析器
+### 2. Cost Optimizer
 ```javascript
 const { CostOptimizer } = require('devtools-llm');
 
 const optimizer = new CostOptimizer();
 const analysis = optimizer.analyzeCosts(toolCalls);
 
-// 自动识别：
-// - 可降级的模型调用（节省 45%）
-// - 可缓存的重复调用（节省 30%）
-// - 可批处理的请求（节省 17%）
+// Identifies:
+// - Model calls that can use cheaper alternatives
+// - Duplicate calls that can be cached
+// - Requests that can be batched
 ```
 
-### 3. 时间旅行调试器
+### 3. Time-Travel Debugger
 ```javascript
 const { TimeTravelDebugger } = require('devtools-llm');
 
 const debugger = new TimeTravelDebugger();
 debugger.recordSnapshot(toolCall, context);
-debugger.goBack(5);  // 回到 5 步前
-debugger.compareSnapshots(id1, id2);  // 对比差异
+debugger.goBack(5);  // Go back 5 steps
+debugger.compareSnapshots(id1, id2);  // Compare states
 ```
 
-### 4. 实时 Web UI
+### 4. Real-time Web UI
 ```bash
 npm run dev:frontend
-# 访问 http://localhost:5173
+# Visit http://localhost:5173
 ```
 
-**包含 5 个完整页面：**
-- 📊 Dashboard - 实时监控
-- ⚠️ Error Analysis - AI 错误分析
-- 🔗 Trace Viewer - 调用追踪
-- ✅ Parameter Validation - 参数验证
-- ⚙️ Settings - 配置管理
+Includes 5 pages:
+- Dashboard - Real-time monitoring
+- Error Analysis - AI-powered error analysis
+- Trace Viewer - Call tracing
+- Parameter Validation - Schema validation
+- Settings - Configuration management
 
 ---
 
-## 🏆 竞争优势
+## Feature Comparison
 
-| 功能 | DevToolsLLM | Langfuse | OpenLLMetry | AgentNeo |
-|------|-------------|----------|-------------|----------|
-| **AI 自动修复** | ✅ | ❌ | ❌ | ❌ |
-| **成本优化** | ✅ | 基础 | ❌ | ❌ |
-| **时间旅行调试** | ✅ | ❌ | ❌ | ❌ |
-| **本地运行** | ✅ | ❌ | ❌ | ✅ |
-| **零配置** | ✅ | ❌ | ❌ | ✅ |
-| **完全免费** | ✅ | 有限制 | ✅ | ✅ |
-| **内置 UI** | ✅ | ✅ | ❌ | ✅ |
-
----
-
-## 📊 性能
-
-- **平均响应时间：** 0.025ms
-- **吞吐量：** 2,793,380 ops/sec
-- **包大小：** 85.5 kB
-- **所有模块：** < 1ms 响应时间
+| Feature | DevToolsLLM | Langfuse | OpenLLMetry | AgentNeo |
+|---------|-------------|----------|-------------|----------|
+| Auto-fix suggestions | Yes | No | No | No |
+| Cost optimization | Yes | Basic | No | No |
+| Time-travel debugging | Yes | No | No | No |
+| Local execution | Yes | No | No | Yes |
+| Zero configuration | Yes | No | No | Yes |
+| Free | Yes | Limited | Yes | Yes |
+| Built-in UI | Yes | Yes | No | Yes |
 
 ---
 
-## 🎯 使用场景
+## Performance
 
-### 调试 LangChain 应用
+- Average response time: 0.025ms
+- Throughput: 2,793,380 ops/sec
+- Package size: 85.5 kB
+- All modules: < 1ms response time
+
+---
+
+## Usage Examples
+
+### Debugging LangChain Applications
 ```javascript
 const { LangChainTracer } = require('devtools-llm');
 
@@ -110,14 +109,14 @@ const tracer = new LangChainTracer();
 const chain = new LLMChain({ llm, prompt, callbacks: [tracer] });
 ```
 
-### 监控 OpenAI 调用
+### Monitoring OpenAI Calls
 ```javascript
 const { RealtimeMonitor } = require('devtools-llm');
 
 const monitor = new RealtimeMonitor();
 await monitor.start();
 
-// 记录每次调用
+// Record each call
 monitor.recordCall({
   tool: 'chat',
   model: 'gpt-4',
@@ -126,56 +125,56 @@ monitor.recordCall({
 });
 ```
 
-### 优化成本
+### Optimizing Costs
 ```javascript
 const { CostOptimizer } = require('devtools-llm');
 
 const optimizer = new CostOptimizer();
 const analysis = optimizer.analyzeCosts(recentCalls);
 
-console.log(`潜在节省: $${analysis.potentialSavings}`);
+console.log(`Potential savings: $${analysis.potentialSavings}`);
 ```
 
 ---
 
-## 📚 完整功能列表
+## Complete Feature List
 
-### 核心模块（5个）
+### Core Modules (5)
 - ErrorInspector - 错误分析
 - ToolCallTracer - 调用追踪
 - TraceVisualizer - 可视化
 - RealtimeMonitor - 实时监控
 - ParameterValidator - 参数验证
 
-### ML 模块（4个）
+### ML Modules (4)
 - MLErrorInspector - ML 增强分析
 - ErrorClassifier - 错误分类
 - AnomalyDetector - 异常检测
 - SuggestionGenerator - 建议生成
 
-### 高级功能（4个）
+### Advanced Features (4)
 - AutoFixSuggester - 自动修复
 - LLMAutoFixSuggester - LLM 增强修复
 - CostOptimizer - 成本优化
 - TimeTravelDebugger - 时间旅行
 
-### 框架集成（2个）
+### Framework Integrations (2)
 - LangChainTracer
 - VercelAITracer
 
 ---
 
-## 🧪 测试覆盖
+## Test Coverage
 
-- ✅ 核心测试：4/4 通过（100%）
-- ✅ 功能测试：13/14 通过（92.9%）
-- ✅ ML 测试：5/5 通过（100%）
-- ✅ 性能测试：所有模块 < 1ms
-- ✅ Web UI：完全功能性，真实交互
+- Core tests: 4/4 passing (100%)
+- Feature tests: 13/14 passing (92.9%)
+- ML tests: 5/5 passing (100%)
+- Performance tests: All modules < 1ms
+- Web UI: Fully functional with real interactions
 
 ---
 
-## 📖 文档
+## Documentation
 
 - [README](https://github.com/yourusername/DevToolsLLM)
 - [API 文档](https://github.com/yourusername/DevToolsLLM/tree/main/docs)
@@ -186,46 +185,46 @@ console.log(`潜在节省: $${analysis.potentialSavings}`);
 
 ---
 
-## 🎬 快速演示
+## Quick Start
 
 ```bash
-# 1. 安装
+# 1. Install
 npm install devtools-llm
 
-# 2. 运行实时演示
+# 2. Run demo
 npx devtools-llm
 
-# 3. 启动 Web UI
+# 3. Start Web UI
 npm run dev:frontend
 
-# 4. 访问
+# 4. Visit
 http://localhost:5173
 ```
 
 ---
 
-## 💡 为什么选择 DevToolsLLM？
+## Why DevToolsLLM?
 
-### 1. 真正的 AI 自动修复
-不只是告诉你有错误，还能生成可执行的修复代码。
+### AI-Powered Auto-Fix
+Generates executable fix code, not just error messages.
 
-### 2. 显著降低成本
-自动识别优化机会，实际节省 20-50% 的 LLM 调用成本。
+### Cost Optimization
+Identifies optimization opportunities to reduce LLM API costs.
 
-### 3. 独特的时间旅行
-回放任意时间点的状态，快速定位问题。
+### Time-Travel Debugging
+Replay any point in execution history to locate issues quickly.
 
-### 4. 完全本地运行
-零配置，无需注册，数据不离开你的机器。
+### Local Execution
+Runs entirely on your machine. No registration required, data stays local.
 
-### 5. 100% 免费
-所有功能永久免费，无使用限制。
+### Free and Open
+All features are free with no usage limits.
 
 ---
 
-## 🌟 示例代码
+## Example Code
 
-### 完整的错误处理流程
+### Complete Error Handling Workflow
 ```javascript
 const {
   AutoFixSuggester,
@@ -234,63 +233,61 @@ const {
   RealtimeMonitor
 } = require('devtools-llm');
 
-// 1. 启动监控
+// 1. Start monitoring
 const monitor = new RealtimeMonitor();
 await monitor.start();
 
-// 2. 记录调用
+// 2. Record calls
 const debugger = new TimeTravelDebugger();
 debugger.recordSnapshot(toolCall, context);
 
-// 3. 如果出错，自动修复
+// 3. Auto-fix on error
 if (error) {
   const fixer = new AutoFixSuggester();
   const fixes = await fixer.suggestFix(error, toolCall, history);
   
-  console.log('修复建议:', fixes.fixes[0].title);
-  console.log('代码:', fixes.fixes[0].code);
+  console.log('Fix suggestion:', fixes.fixes[0].title);
+  console.log('Code:', fixes.fixes[0].code);
 }
 
-// 4. 优化成本
+// 4. Optimize costs
 const optimizer = new CostOptimizer();
 const analysis = optimizer.analyzeCosts(recentCalls);
-console.log(`可节省: $${analysis.potentialSavings}`);
+console.log(`Potential savings: $${analysis.potentialSavings}`);
 ```
 
 ---
 
-## 🤝 贡献
+## Contributing
 
-欢迎贡献！请查看 [CONTRIBUTING.md](./CONTRIBUTING.md)
+Contributions are welcome. See [CONTRIBUTING.md](./CONTRIBUTING.md) for details.
 
 ---
 
-## 📄 许可证
+## License
 
 MIT License
 
 ---
 
-## 🔗 链接
+## Links
 
-- **npm:** https://www.npmjs.com/package/devtools-llm
-- **GitHub:** https://github.com/yourusername/DevToolsLLM
-- **文档:** https://github.com/yourusername/DevToolsLLM/tree/main/docs
-
----
-
-## 📞 联系方式
-
-- **Issues:** https://github.com/yourusername/DevToolsLLM/issues
-- **Email:** caoqt2000@outlook.com
-- **维护者:** nataliecao323
+- npm: https://www.npmjs.com/package/devtools-llm
+- GitHub: https://github.com/yourusername/DevToolsLLM
+- Documentation: https://github.com/yourusername/DevToolsLLM/tree/main/docs
 
 ---
 
-**立即开始使用：**
+## Contact
+
+- Issues: https://github.com/yourusername/DevToolsLLM/issues
+- Email: caoqt2000@outlook.com
+- Maintainer: nataliecao323
+
+---
+
+Get started:
 
 ```bash
 npm install devtools-llm
 ```
-
-🎉 **让 LLM 调试变得简单！**
