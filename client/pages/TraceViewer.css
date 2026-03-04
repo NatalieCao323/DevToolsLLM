@@ -1,3 +1,269 @@
 .trace-viewer {
   max-width: 1400px;
 }
+
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.filter-bar button {
+  padding: 10px 20px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-bar button:hover {
+  background: #252525;
+  border-color: #4CAF50;
+}
+
+.filter-bar button.active {
+  background: #4CAF50;
+  border-color: #4CAF50;
+  color: white;
+}
+
+.trace-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+}
+
+.trace-list-section,
+.trace-details-section {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 24px;
+  border: 1px solid #333;
+}
+
+.trace-list-section h2,
+.trace-details-section h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+}
+
+.trace-list {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.trace-item {
+  background: #0a0a0a;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-left: 3px solid #666;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.trace-item:hover {
+  background: #151515;
+  transform: translateX(4px);
+}
+
+.trace-item.selected {
+  background: #1a2a1a;
+  border-left-color: #4CAF50;
+}
+
+.trace-item.success {
+  border-left-color: #4CAF50;
+}
+
+.trace-item.error {
+  border-left-color: #f44336;
+}
+
+.trace-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.trace-id {
+  font-weight: 600;
+  color: #e0e0e0;
+  font-size: 14px;
+}
+
+.trace-status {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.trace-status.success {
+  background: #1b5e20;
+  color: #4CAF50;
+}
+
+.trace-status.error {
+  background: #5e1b1b;
+  color: #f44336;
+}
+
+.trace-info {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: #666;
+}
+
+.trace-tree {
+  background: #0a0a0a;
+  border-radius: 6px;
+  padding: 20px;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 24px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.tree-node {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  color: #e0e0e0;
+  font-size: 13px;
+}
+
+.connector {
+  color: #666;
+  min-width: 24px;
+}
+
+.status-icon {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.status-icon.success {
+  color: #4CAF50;
+}
+
+.status-icon.error {
+  color: #f44336;
+}
+
+.tool-name {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.duration {
+  color: #888;
+  font-size: 11px;
+}
+
+.error-badge {
+  background: #5e1b1b;
+  color: #f44336;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  margin-left: 8px;
+}
+
+.timeline {
+  background: #0a0a0a;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.timeline-item {
+  margin-bottom: 16px;
+}
+
+.timeline-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #e0e0e0;
+}
+
+.timeline-bar-container {
+  height: 24px;
+  background: #1a1a1a;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-bar {
+  height: 100%;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  transition: all 0.3s;
+}
+
+.timeline-bar.success {
+  background: linear-gradient(90deg, #4CAF50, #45a049);
+}
+
+.timeline-bar.error {
+  background: linear-gradient(90deg, #f44336, #d32f2f);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  background: #0a0a0a;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.stat-value.success {
+  color: #4CAF50;
+}
+
+.stat-value.error {
+  color: #f44336;
+}
+
+.no-selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: #666;
+  font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .trace-content {
+    grid-template-columns: 1fr;
+  }
+}
