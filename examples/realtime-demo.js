@@ -5,8 +5,9 @@
  * 启动 WebSocket 服务器并模拟真实的工具调用
  */
 
-const { RealtimeMonitor } = require('../src/index');
-const { AutoFixSuggester, CostOptimizer } = require('../src/index');
+const RealtimeMonitor = require('../src/RealtimeMonitor');
+const AutoFixSuggester = require('../src/AutoFixSuggester');
+const CostOptimizer = require('../src/CostOptimizer');
 
 console.log('🚀 启动 DevToolsLLM 实时演示...\n');
 

@@ -392,7 +392,4 @@ async function start(port) {
   return monitor;
 }
 
-module.exports = {
-  RealtimeMonitor,
-  start
-};
+module.exports = RealtimeMonitor;
