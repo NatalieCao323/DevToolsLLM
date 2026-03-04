@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+const [, , command, ...args] = process.argv;
+const traceToolCall = require('../src/ToolCallTracer');
+const inspectError = require('../src/ErrorInspector');
+const visualizeTrace = require('../src/Visualizer');
+const liveMonitor = require('../src/LiveMonitor');
+
+switch (command) {
+    case 'trace':
+        traceToolCall(args[0]);
+        break;
+    case 'inspect':
+        inspectError(args[0]);
+        break;
+    case 'visualize':
+        visualizeTrace(args[0]);
+        break;
+    case 'monitor':
+        liveMonitor();
+        break;
+    default:
+        console.log('Usage: devtools <command> <file>');
+        console.log('Commands: trace, inspect, visualize, monitor');
+}

@@ -1,0 +1,14 @@
+node_modules/
+*.log
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+.DS_Store
+.env
+dist/
+coverage/
+.nyc_output/
+*.trace.json
+*_analysis.json
+*_trace.json
