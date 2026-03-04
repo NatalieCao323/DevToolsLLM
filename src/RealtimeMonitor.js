@@ -99,7 +99,7 @@ class RealtimeMonitor {
   }
 
   /**
-   * Record a tool call
+   * Record a tool call and broadcast to all clients
    */
   recordCall(call) {
     const enrichedCall = {
@@ -122,6 +122,13 @@ class RealtimeMonitor {
     });
 
     return enrichedCall;
+  }
+
+  /**
+   * Get recent calls
+   */
+  getRecentCalls(count = 50) {
+    return this.callHistory.slice(-count);
   }
 
   /**
