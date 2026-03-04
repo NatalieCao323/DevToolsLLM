@@ -1,4 +1,4 @@
-# DevToolsLLM 🔍
+# DevToolsLLM 
 
 > **全栈 LLM 应用调试与监控平台**  
 > 让 AI 工具调用透明化、可追踪、可优化
@@ -9,7 +9,7 @@
 
 ---
 
-## 📖 目录
+##  目录
 
 - [项目简介](#项目简介)
 - [核心目标](#核心目标)
@@ -27,7 +27,7 @@
 
 ---
 
-## 🎯 项目简介
+##  项目简介
 
 **DevToolsLLM** 是一个专为 LLM（大语言模型）应用开发者设计的全栈调试与监控平台。它解决了 AI 应用开发中最痛的问题：**工具调用的黑盒性**。
 
@@ -35,17 +35,17 @@
 
 在开发 LLM 应用时，你是否遇到过这些问题：
 
-- ❌ **工具调用失败，但不知道为什么？**
-- ❌ **参数传递错误，但错误信息不清晰？**
-- ❌ **性能瓶颈在哪里？哪个工具最慢？**
-- ❌ **调用链复杂，无法追踪完整流程？**
-- ❌ **生产环境出错，缺乏实时监控？**
+-  **工具调用失败，但不知道为什么？**
+-  **参数传递错误，但错误信息不清晰？**
+-  **性能瓶颈在哪里？哪个工具最慢？**
+-  **调用链复杂，无法追踪完整流程？**
+-  **生产环境出错，缺乏实时监控？**
 
 **DevToolsLLM 一站式解决这些问题！**
 
 ---
 
-## 🎯 核心目标
+##  核心目标
 
 ### 1. **透明化** - 让每一次工具调用都清晰可见
 - 完整记录工具调用的输入、输出、耗时
@@ -64,9 +64,9 @@
 
 ---
 
-## ✨ 主要功能
+##  主要功能
 
-### 🔧 核心模块
+###  核心模块
 
 | 模块 | 功能 | 特点 |
 |------|------|------|
@@ -76,24 +76,24 @@
 | **RealtimeMonitor** | 实时监控 | WebSocket 推送、Web 仪表盘、实时统计 |
 | **ParameterValidator** | 参数验证 | JSON Schema 验证、类型检查、必填字段检查 |
 
-### 🌐 Web UI 功能
+###  Web UI 功能
 
-- **📊 实时仪表盘** - 一目了然的统计数据
-- **🔗 调用链可视化** - 清晰展示工具调用关系
-- **🐛 错误高亮** - 快速识别失败的调用
-- **⏱️ 性能监控** - 实时追踪平均耗时
-- **📈 趋势分析** - 成功率、调用量趋势
+- ** 实时仪表盘** - 一目了然的统计数据
+- ** 调用链可视化** - 清晰展示工具调用关系
+- ** 错误高亮** - 快速识别失败的调用
+- ** 性能监控** - 实时追踪平均耗时
+- ** 趋势分析** - 成功率、调用量趋势
 
-### 🔌 框架支持
+###  框架支持
 
-- ✅ **LangChain** - 完整集成
-- ✅ **Vercel AI SDK** - 中间件支持
-- ✅ **OpenAI SDK** - 拦截器支持（计划中）
-- ✅ **通用 Node.js** - 灵活的 API
+-  **LangChain** - 完整集成
+-  **Vercel AI SDK** - 中间件支持
+-  **OpenAI SDK** - 拦截器支持（计划中）
+-  **通用 Node.js** - 灵活的 API
 
 ---
 
-## 🚀 快速开始
+##  快速开始
 
 ### 安装
 
@@ -121,9 +121,9 @@ npm run dev:frontend
 
 ---
 
-## 📚 详细使用指南
+##  详细使用指南
 
-### 1️⃣ CLI 工具
+###  CLI 工具
 
 #### 错误分析
 
@@ -135,9 +135,9 @@ devtools inspect error.log
 
 **输出示例：**
 ```
-🔍 Error Analysis Report
+ Error Analysis Report
 
-📊 Summary:
+ Summary:
   Total Errors: 15
   Critical: 2
   High: 5
@@ -147,7 +147,7 @@ devtools inspect error.log
   API_ERROR: 5
   INVALID_PARAMS: 7
 
-💡 Debugging Suggestions:
+ Debugging Suggestions:
 
 1. 3 timeout error(s) detected
    Solutions:
@@ -182,23 +182,23 @@ devtools trace tool_log.json
 
 **输出示例：**
 ```
-🔗 Tool Call Trace Generated
+ Tool Call Trace Generated
 
-📊 Summary:
+ Summary:
   Total Calls: 25
   Successful: 22
   Failed: 3
   Average Duration: 245ms
 
-🔧 Tool Usage:
+ Tool Usage:
   search: 10
   calculator: 8
   weather: 7
 
 📝 Recent Calls (last 5):
-  ✅ search (120ms)
-  ✅ calculator (45ms)
-  ❌ weather
+   search (120ms)
+   calculator (45ms)
+   weather
      Error: API timeout
 ```
 
@@ -240,12 +240,12 @@ devtools visualize trace.json
 
 **输出示例：**
 ```
-🌳 Tool Call Chain Visualization
+ Tool Call Chain Visualization
 
-└─ ✅ search (120ms)
-   ├─ ✅ calculator (45ms)
-   └─ ✅ weather (80ms)
-      └─ ❌ Error: API timeout
+└─  search (120ms)
+   ├─  calculator (45ms)
+   └─  weather (80ms)
+      └─  Error: API timeout
 ```
 
 #### 参数验证
@@ -279,7 +279,7 @@ devtools validate schema.json
 
 ---
 
-### 2️⃣ Web UI 实时监控
+###  Web UI 实时监控
 
 #### 启动监控系统
 
@@ -305,7 +305,7 @@ npm run dev:frontend
 
 打开浏览器访问 `http://localhost:3001`，你将看到：
 
-#### 📊 Dashboard（仪表盘）
+####  Dashboard（仪表盘）
 
 **实时统计卡片：**
 - **总调用次数** - 累计工具调用数量
@@ -315,7 +315,7 @@ npm run dev:frontend
 
 **最近调用列表：**
 - 实时显示最新的 10 次工具调用
-- 状态图标（✅ 成功 / ❌ 失败）
+- 状态图标（ 成功 /  失败）
 - 工具名称、耗时、时间戳
 - 错误信息高亮显示
 
@@ -324,7 +324,7 @@ npm run dev:frontend
 - 支持嵌套调用展示
 - 错误节点特殊标记
 
-#### 🐛 Error Analysis（错误分析页面）
+####  Error Analysis（错误分析页面）
 
 *即将推出：*
 - 错误趋势图表
@@ -332,7 +332,7 @@ npm run dev:frontend
 - 智能调试建议
 - 错误详情查看
 
-#### 🔗 Trace Viewer（追踪查看器）
+####  Trace Viewer（追踪查看器）
 
 *即将推出：*
 - 交互式调用链图
@@ -340,7 +340,7 @@ npm run dev:frontend
 - 性能瓶颈分析
 - 调用详情面板
 
-#### ⚙️ Settings（设置）
+####  Settings（设置）
 
 *即将推出：*
 - 监控配置
@@ -350,7 +350,7 @@ npm run dev:frontend
 
 ---
 
-### 3️⃣ 编程 API
+###  编程 API
 
 #### 基础用法
 
@@ -400,7 +400,7 @@ if (!result.valid) {
 
 ---
 
-## 🔌 框架集成
+##  框架集成
 
 ### LangChain 集成
 
@@ -450,7 +450,7 @@ const tracedFunction = tracer.wrapTool(myToolFunction, 'myTool');
 
 ---
 
-## 🎯 实时监控功能
+##  实时监控功能
 
 ### WebSocket 实时推送
 
@@ -522,7 +522,7 @@ curl http://localhost:3000/api/stats
 
 ---
 
-## 🚀 高级特性
+##  高级特性
 
 ### 1. 性能分析
 
@@ -536,7 +536,7 @@ TraceVisualizer.visualizePerformance(trace);
 
 **输出：**
 ```
-🔥 Performance Heatmap:
+ Performance Heatmap:
 
 search              ████████████████░░░░░░░░░░░░░░ 245ms (min: 100ms, max: 500ms)
 calculator          ████░░░░░░░░░░░░░░░░░░░░░░░░░░ 45ms  (min: 20ms, max: 80ms)
@@ -551,12 +551,12 @@ TraceVisualizer.visualizeTimeline(trace);
 
 **输出：**
 ```
-⏱️  Timeline:
+  Timeline:
 
-+0ms    ✅ search [120ms]
-+120ms  ✅ calculator [45ms]
-+165ms  ✅ weather [80ms]
-+245ms  ❌ api_call [timeout]
++0ms     search [120ms]
++120ms   calculator [45ms]
++165ms   weather [80ms]
++245ms   api_call [timeout]
 ```
 
 ### 3. 自定义错误模式
@@ -570,9 +570,9 @@ ErrorInspector.addPattern('CUSTOM_ERROR', /my custom error/i);
 
 ---
 
-## 🗺️ 开发路线图
+##  开发路线图
 
-### ✅ 已完成（v0.1.0）
+###  已完成（v0.1.0）
 - [x] CLI 工具（trace, inspect, visualize, monitor）
 - [x] 错误分析与智能建议
 - [x] 调用链追踪与可视化
@@ -583,7 +583,7 @@ ErrorInspector.addPattern('CUSTOM_ERROR', /my custom error/i);
 - [x] Vercel AI SDK 集成
 - [x] 参数验证
 
-### 🚧 进行中（v0.2.0）
+###  进行中（v0.2.0）
 - [ ] **机器学习增强错误分析**
   - 使用 ML 模型提升错误分类准确度
   - 基于历史数据的智能建议
@@ -598,7 +598,7 @@ ErrorInspector.addPattern('CUSTOM_ERROR', /my custom error/i);
   - 内存使用优化
   - 数据压缩与归档
 
-### 📅 计划中（v0.3.0+）
+###  计划中（v0.3.0+）
 - [ ] OpenAI SDK 集成
 - [ ] Anthropic SDK 集成
 - [ ] 告警系统（邮件、Slack、钉钉）
@@ -610,7 +610,7 @@ ErrorInspector.addPattern('CUSTOM_ERROR', /my custom error/i);
 
 ---
 
-## 🤝 贡献指南
+##  贡献指南
 
 我们欢迎所有形式的贡献！
 
@@ -648,13 +648,13 @@ npm run dev:frontend
 
 ---
 
-## 📄 许可证
+##  许可证
 
 MIT © 2026
 
 ---
 
-## 🙏 致谢
+##  致谢
 
 感谢所有为这个项目做出贡献的开发者！
 
@@ -665,7 +665,7 @@ MIT © 2026
 
 ---
 
-## 📞 联系我们
+##  联系我们
 
 - **GitHub Issues**: [提交问题](https://github.com/yourusername/devtools-llm/issues)
 - **Discussions**: [参与讨论](https://github.com/yourusername/devtools-llm/discussions)
@@ -673,10 +673,10 @@ MIT © 2026
 
 ---
 
-## ⭐ Star History
+##  Star History
 
-如果这个项目对你有帮助，请给我们一个 Star！⭐
+如果这个项目对你有帮助，请给我们一个 Star！
 
 ---
 
-**让 LLM 应用开发更透明、更高效！** 🚀
+**让 LLM 应用开发更透明、更高效！** 

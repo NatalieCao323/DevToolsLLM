@@ -17,7 +17,7 @@ function RecentCalls({ calls }) {
           <div className="call-header">
             <div className="call-tool">
               <span className="status-icon">
-                {call.status === 'success' ? '✅' : '❌'}
+                {call.status === 'success' ? '' : ''}
               </span>
               <span className="tool-name">{call.tool}</span>
             </div>

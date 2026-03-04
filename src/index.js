@@ -11,6 +11,12 @@ const { ParameterValidator } = require('./ParameterValidator');
 const { LangChainTracer } = require('./integrations/langchain');
 const { VercelAITracer } = require('./integrations/vercel-ai');
 
+// ML modules
+const MLErrorInspector = require('./ml/MLErrorInspector');
+const ErrorClassifier = require('./ml/ErrorClassifier');
+const AnomalyDetector = require('./ml/AnomalyDetector');
+const SuggestionGenerator = require('./ml/SuggestionGenerator');
+
 module.exports = {
   // Core modules
   ErrorInspector,
@@ -18,6 +24,12 @@ module.exports = {
   TraceVisualizer,
   RealtimeMonitor,
   ParameterValidator,
+  
+  // ML modules
+  MLErrorInspector,
+  ErrorClassifier,
+  AnomalyDetector,
+  SuggestionGenerator,
   
   // Framework integrations
   LangChainTracer,

@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import ErrorAnalysis from './pages/ErrorAnalysis';
 import TraceViewer from './pages/TraceViewer';
+import ParameterValidation from './pages/ParameterValidation';
 import Settings from './pages/Settings';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/errors" element={<ErrorAnalysis />} />
         <Route path="/traces" element={<TraceViewer />} />
+        <Route path="/validation" element={<ParameterValidation />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>
     </Layout>

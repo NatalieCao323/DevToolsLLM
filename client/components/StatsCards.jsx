@@ -6,25 +6,25 @@ function StatsCards({ stats }) {
     {
       label: 'Total Calls',
       value: stats.totalCalls,
-      icon: '📊',
+      icon: '',
       color: '#4CAF50'
     },
     {
       label: 'Success Rate',
       value: `${stats.successRate}%`,
-      icon: '✅',
+      icon: '',
       color: '#2196F3'
     },
     {
       label: 'Avg Duration',
       value: `${stats.avgDuration}ms`,
-      icon: '⏱️',
+      icon: '',
       color: '#FF9800'
     },
     {
       label: 'Active Clients',
       value: stats.activeClients,
-      icon: '👥',
+      icon: '',
       color: '#9C27B0'
     }
   ];

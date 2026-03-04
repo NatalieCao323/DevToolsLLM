@@ -19,7 +19,7 @@ function ToolChainDisplay({ calls }) {
         {recentCalls.map((call, index) => {
           const isLast = index === recentCalls.length - 1;
           const connector = isLast ? '└─' : '├─';
-          const status = call.status === 'success' ? '✅' : '❌';
+          const status = call.status === 'success' ? '' : '';
           
           return (
             <div key={call.id || index} className="chain-node">
@@ -32,7 +32,7 @@ function ToolChainDisplay({ calls }) {
               {call.error && (
                 <div className="node-error">
                   <span className="error-connector">   └─</span>
-                  <span className="error-icon">❌</span>
+                  <span className="error-icon"></span>
                   <span className="error-text">
                     {call.error.message || call.error}
                   </span>

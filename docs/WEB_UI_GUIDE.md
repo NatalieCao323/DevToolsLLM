@@ -30,13 +30,13 @@ DevToolsLLM 提供了一个现代化的 Web 界面，用于实时监控和分析
 
 ```
 ┌─────────────────────┐
-│ 🔍 DevToolsLLM      │
+│  DevToolsLLM      │
 │ v0.1.0              │
 ├─────────────────────┤
-│ 📊 Dashboard        │ ← 实时监控
-│ 🐛 Errors           │ ← 错误分析
-│ 🔗 Traces           │ ← 调用追踪
-│ ⚙️ Settings         │ ← 系统设置
+│  Dashboard        │ ← 实时监控
+│  Errors           │ ← 错误分析
+│  Traces           │ ← 调用追踪
+│  Settings         │ ← 系统设置
 ├─────────────────────┤
 │ • Connected         │ ← 连接状态
 └─────────────────────┘
@@ -76,7 +76,7 @@ DevToolsLLM 提供了一个现代化的 Web 界面，用于实时监控和分析
 显示最新的 10 次工具调用：
 
 **显示信息：**
-- ✅/❌ 状态图标
+- / 状态图标
 - 工具名称（高亮显示）
 - 执行耗时
 - 时间戳
@@ -92,10 +92,10 @@ DevToolsLLM 提供了一个现代化的 Web 界面，用于实时监控和分析
 ASCII 树形图展示工具调用关系：
 
 ```
-├─ ✅ search (120ms)
-├─ ✅ calculator (45ms)
-└─ ✅ weather (80ms)
-   └─ ❌ Error: API timeout
+├─  search (120ms)
+├─  calculator (45ms)
+└─  weather (80ms)
+   └─  Error: API timeout
 ```
 
 **特点：**
@@ -209,9 +209,9 @@ ws.onmessage = (event) => {
 
 侧边栏底部显示连接状态：
 
-- **🟢 Connected** - 已连接，实时更新
-- **🟡 Connecting** - 正在连接
-- **🔴 Disconnected** - 连接断开，尝试重连
+- ** Connected** - 已连接，实时更新
+- ** Connecting** - 正在连接
+- ** Disconnected** - 连接断开，尝试重连
 
 ### 自动重连
 

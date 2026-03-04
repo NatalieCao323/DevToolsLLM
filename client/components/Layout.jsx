@@ -6,17 +6,17 @@ function Layout({ children }) {
   const location = useLocation();
 
   const navItems = [
-    { path: '/', label: '📊 Dashboard', icon: '📊' },
-    { path: '/errors', label: '🐛 Errors', icon: '🐛' },
-    { path: '/traces', label: '🔗 Traces', icon: '🔗' },
-    { path: '/settings', label: '⚙️ Settings', icon: '⚙️' }
+    { path: '/', label: ' Dashboard', icon: '' },
+    { path: '/errors', label: ' Errors', icon: '' },
+    { path: '/traces', label: ' Traces', icon: '' },
+    { path: '/settings', label: ' Settings', icon: '' }
   ];
 
   return (
     <div className="layout">
       <aside className="sidebar">
         <div className="sidebar-header">
-          <h1>🔍 DevToolsLLM</h1>
+          <h1> DevToolsLLM</h1>
           <p className="version">v0.1.0</p>
         </div>
         
