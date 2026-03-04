@@ -1,0 +1,61 @@
+.tool-chain-display {
+  font-family: 'Courier New', monospace;
+  background: #0a0a0a;
+  border-radius: 6px;
+  padding: 20px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.chain-tree {
+  line-height: 1.8;
+}
+
+.chain-node {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  color: #e0e0e0;
+}
+
+.connector {
+  color: #666;
+  min-width: 24px;
+}
+
+.status {
+  font-size: 14px;
+}
+
+.tool-name {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.duration {
+  color: #888;
+  font-size: 12px;
+}
+
+.node-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  padding-left: 32px;
+  color: #f44336;
+  font-size: 12px;
+}
+
+.error-connector {
+  color: #666;
+}
+
+.error-icon {
+  font-size: 12px;
+}
+
+.error-text {
+  color: #ffcdd2;
+}

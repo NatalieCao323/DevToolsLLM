@@ -1,0 +1,21 @@
+.error-analysis {
+  max-width: 1400px;
+}
+
+.coming-soon {
+  text-align: center;
+  padding: 100px 20px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.coming-soon h2 {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.coming-soon p {
+  color: #888;
+  font-size: 16px;
+}

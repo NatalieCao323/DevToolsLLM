@@ -1,0 +1,44 @@
+.dashboard {
+  max-width: 1400px;
+}
+
+.page-header {
+  margin-bottom: 32px;
+}
+
+.page-header h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+  color: #4CAF50;
+}
+
+.page-header p {
+  color: #888;
+  font-size: 14px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.dashboard-section {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 24px;
+  border: 1px solid #333;
+}
+
+.dashboard-section h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}

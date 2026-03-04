@@ -11,7 +11,10 @@
   },
   "scripts": {
     "test": "node tests/test.js",
-    "dev": "node bin/devtools.js"
+    "dev": "node bin/devtools.js",
+    "dev:frontend": "vite",
+    "build:frontend": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [
     "llm",
@@ -25,10 +28,14 @@
   "license": "MIT",
   "type": "commonjs",
   "dependencies": {
-    "ws": "^8.19.0",
-    "chalk": "^4.1.2"
+    "chalk": "^4.1.2",
+    "ws": "^8.19.0"
   },
   "engines": {
     "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.4",
+    "vite": "^7.3.1"
   }
 }
