@@ -1,6 +1,6 @@
 {
   "name": "devtools-llm",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Debugging and monitoring tools for LLM applications",
   "main": "src/index.js",
   "bin": {

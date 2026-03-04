@@ -17,6 +17,11 @@ const ErrorClassifier = require('./ml/ErrorClassifier');
 const AnomalyDetector = require('./ml/AnomalyDetector');
 const SuggestionGenerator = require('./ml/SuggestionGenerator');
 
+// Advanced features
+const AutoFixSuggester = require('./AutoFixSuggester');
+const CostOptimizer = require('./CostOptimizer');
+const TimeTravelDebugger = require('./TimeTravelDebugger');
+
 module.exports = {
   // Core modules
   ErrorInspector,
@@ -30,6 +35,11 @@ module.exports = {
   ErrorClassifier,
   AnomalyDetector,
   SuggestionGenerator,
+  
+  // Advanced features
+  AutoFixSuggester,
+  CostOptimizer,
+  TimeTravelDebugger,
   
   // Framework integrations
   LangChainTracer,
